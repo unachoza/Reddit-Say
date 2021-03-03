@@ -1,5 +1,4 @@
 .load-spinner {
-  margin-top: 50px;
   display: inline-block;
   width: 6.5rem;
   height: 6.5rem;
@@ -22,8 +21,8 @@
   width: 0.5rem;
   height: 2rem;
   border-radius: 10%;
-  background: rgb(153, 230, 227);
-  box-shadow: 0 0 1rem blueviolet;
+  background: rgb(209, 47, 0);
+  box-shadow: 0 0 1rem grey;
 }
 .load-spinner div:nth-child(1) {
   transform: rotate(0deg);

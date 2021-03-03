@@ -1,47 +1,27 @@
-# Getting Started with Create React App
+# Say Frontend Take Home Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Details
 
-## Available Scripts
+### Goal
 
-In the project directory, you can run:
+The result of this project should be a page containing Reddit posts grouped by subreddit and sorted from most to least upvotes. Something to keep in mind here is that we aren't looking for 100% perfection. We're more interested in looking into your process as an engineer.
 
-### `npm start`
+### Detailed Steps
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Fetch data from the url provided: [https://www.reddit.com/.json](https://www.reddit.com/.json).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Group the posts together by subreddit.
 
-### `npm test`
+3. Sort the posts in each subreddit based on upvotes, i.e. most upvotes to fewest.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. For each group of posts in a subreddit, display the subreddit name. Each post of the subreddit must display title, image (if there is one), date (formatted as MM/DD/YYYY), upvotes, and a link to the actual post.
 
-### `npm run build`
+5. Once you are done, push the project to your own GitHub/BitBucket/GitLab account (private is perfectly fine).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Things to keep in mind
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Please take ~2 hours to complete this challenge.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. The end result should be functional and user friendly, but doesn't have to be styled to perfection.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# Reddit-Say
+3. Feel free to use whatever dependencies you would like.

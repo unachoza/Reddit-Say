@@ -4,7 +4,9 @@ main {
   height: 100vh;
   box-sizing: border-box;
 }
-
+.border {
+  border: 2px solid blue;
+}
 .title {
   font-size: 40px;
   margin: 40px 0px;
