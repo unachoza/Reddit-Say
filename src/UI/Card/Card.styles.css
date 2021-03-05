@@ -13,7 +13,7 @@
 .card:hover {
   animation: grow 1s linear ease-in;
   transform: scale(1.1);
-  border: rgb(209, 47, 0) solid 3px;
+  border: blue solid 3px;
   border-radius: 5px;
 }
 
@@ -60,5 +60,5 @@
   }
 }
 .border {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 }

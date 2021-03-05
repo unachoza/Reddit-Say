@@ -1,31 +1,29 @@
 import React from 'react';
+import { JsxChild } from 'typescript';
 import 'UI/Card/Card.styles.css';
 
 export interface SubReddit {
   id: number;
-  title: string;
+  postTitle: string;
   ups: number;
   thumbnail: string;
-  subreddit: string;
+  subRedditThread: string;
 }
 
-const Card = (subReddits: SubReddit[] | any) => {
-  const { title, thumbnail, subreddit, ups } = subReddits.data;
-  return (
-    <>
-      <h4 className="border">{subreddit}</h4>
-      <div className="card">
-        <div className="avatar">
-          <div>{ups}</div>
-        </div>
+const Card = (thread: SubReddit[] | any): any | null | void => {
+  return Object.values(thread.thread).map((sub: any, i: number) => {
+    return (
+      <div key={sub.i} className="card">
         <div className="description">
-          <div className="name">{title}</div>
+          <div className="name">{sub.postTitle}</div>
         </div>
-        <div className="avatar">
-          <img alt="avatar" src={thumbnail} />
-        </div>
+        <div>{sub.ups}</div>
+
+        {/* <div className="avatar">
+            <img alt="avatar" src={thumbnail} />
+          </div> */}
       </div>
-    </>
-  );
+    );
+  });
 };
 export default Card;

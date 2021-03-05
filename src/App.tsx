@@ -8,9 +8,9 @@ import './App.css';
 export interface SubReddit {
   // id: number;
   subRedditThread: string;
-  // postTitle: string;
+  postTitle: string;
   // author: string;
-  upVotes: number;
+  ups: number;
 }
 
 export interface LoadingState {
@@ -59,11 +59,11 @@ const App = () => {
     return shapedData;
   };
   const normalizeData = (data: any) => ({
-    // id: data.subreddit_id,
+    id: data.subreddit_id,
     subRedditThread: data.subreddit,
-    // postTitle: data.title,
+    postTitle: data.title,
     // author: data.author,
-    upVotes: data.ups,
+    ups: data.ups,
   });
 
   const addToSubRedditHashMap = (data: any, cache: any): void /* will return organized data in form of hash */ => {
