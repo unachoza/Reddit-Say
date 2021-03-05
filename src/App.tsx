@@ -6,11 +6,12 @@ import Loading from 'UI/Loading/Loading.component';
 import './App.css';
 
 export interface SubReddit {
-  // id: number;
+  id: number;
   subRedditThread: string;
   postTitle: string;
   // author: string;
   ups: number;
+  thumbnail: string;
 }
 
 export interface LoadingState {
@@ -38,6 +39,7 @@ const App = () => {
         let response = await fetch(REDDIT_URL);
         let data = (await response.json()) || [];
         addToSubRedditHashMap(shapeData(data), cache); //  useMemo
+        console.log(data);
         setSubReddits(shapeData(cache));
         console.log('are they here', subReddits);
         // handleLoadingStatus(LoadingStatus.onLoaded = true)
@@ -64,6 +66,7 @@ const App = () => {
     postTitle: data.title,
     // author: data.author,
     ups: data.ups,
+    thumbnail: data.thumbnail,
   });
 
   const addToSubRedditHashMap = (data: any, cache: any): void /* will return organized data in form of hash */ => {

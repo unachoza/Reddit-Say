@@ -20,7 +20,7 @@ const CardList = (subReddits: any) => {
           byUps.sort((a: any, b: any) => a.ups - b.ups);
           return (
             <div key={k}>
-              <h1>{val[0]}</h1>
+              <h2>{val[0]}</h2>
               <div>
                 <Card thread={byUps} />
               </div>
