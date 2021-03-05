@@ -9,6 +9,7 @@ import 'UI/CardList/CardList.styles.css';
 const CardList = (subReddits: any) => {
   console.log(subReddits.subReddits);
   subReddits = subReddits.subReddits;
+
   return (
     <>
       cardlist
@@ -17,15 +18,23 @@ const CardList = (subReddits: any) => {
         {Object.entries(subReddits).map((val, k) => {
           let entries: any = val[1];
           entries.map((entry: any, i: number) => <h4 key={i}>{entry}</h4>);
+          var byUps = entries.slice(0);
+          byUps.sort(function (a: any, b: any) {
+            return a.upVotes - b.upVotes;
+          });
+          console.log('by ups:');
+          console.log(byUps);
           return (
             <div key={k}>
               <h1>{val[0]}</h1>
               <div>
-                {Object.values(entries).map((thread: any, i: number) => (
-                  <div key={i}>
-                    {thread.subRedditThread} has votes<span>{thread.upVotes}</span>
-                  </div>
-                ))}
+                {Object.values(byUps).map((thread: any, i: number) => {
+                  return (
+                    <div key={i}>
+                      This {thread.subRedditThread} thread has <span>{thread.upVotes} ups</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           );
