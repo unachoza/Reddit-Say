@@ -1,3 +1,7 @@
+header {
+  background-color: white;
+}
+
 main {
   margin: 15vh auto;
   width: 38vw;
@@ -8,8 +12,12 @@ main {
   /* border: 2px solid blue; */
 }
 .title {
+  width: 100%;
+  margin-right: 10px;
   font-size: 40px;
-  margin: 40px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .description {
   font-size: 16px;
@@ -29,7 +37,7 @@ main {
   right: 0;
   left: 0;
   z-index: 10;
-  height: 11vh;
+  height: 15vh;
 }
 .error-message {
   margin: 50px;

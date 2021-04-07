@@ -78,13 +78,12 @@ li {
   align-items: flex-start;
   padding: 0px;
   border-radius: 5px;
-  margin: 24px 0px;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
 }
 .card:hover {
   animation: grow 1s linear ease-in;
-  transform: scale(1.1);
-  border: blue solid 3px;
+  transform: scale(1.05);
+  border: rgb(209, 47, 0) solid 3px;
   border-radius: 5px;
 }

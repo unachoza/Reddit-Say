@@ -17,10 +17,10 @@ export interface SubReddit {
 export interface LoadingState {
   onLoading: boolean;
   onError: boolean;
-  onSuccess: boolean;
+  // onSuccess: boolean;
 }
 
-const INITIALSTATE: LoadingState = { onLoading: false, onError: false, onSuccess: false };
+const INITIALSTATE: LoadingState = { onLoading: false, onError: false };
 const loadingStatus: { LoadingState: any } | any = {};
 
 //SubRedditHash
@@ -34,18 +34,14 @@ const App = () => {
   useEffect(() => {
     const getData = async (cache: any) => {
       try {
-        console.log('here');
-        // handleLoadingStatus(loadingStatus.onLoading = true)
+        setLoadingState({ onLoading: true, onError: false });
         let response = await fetch(REDDIT_URL);
         let data = (await response.json()) || [];
         addToSubRedditHashMap(shapeData(data), cache); //  useMemo
-        console.log(data);
         setSubReddits(shapeData(cache));
-        console.log('are they here', subReddits);
-        // handleLoadingStatus(LoadingStatus.onLoaded = true)
-        console.log(cache, 'here too ');
+        setLoadingState({ onLoading: false, onError: false });
       } catch {
-        // handleLoadingStatus(LoadingStatus.onError = true)
+        setLoadingState({ onLoading: false, onError: true });
       }
     };
     getData(cache);
@@ -64,7 +60,7 @@ const App = () => {
     id: data.subreddit_id,
     subRedditThread: data.subreddit,
     postTitle: data.title,
-    // author: data.author,
+    date: new Date(data.created * 1000).toString(),
     ups: data.ups,
     thumbnail: data.thumbnail,
   });
@@ -85,13 +81,14 @@ const App = () => {
   return (
     <>
       <header className="border fixed-top">
-        <img src={reddit} className="App-logo" alt="logo" style={{ height: '40px' }} />{' '}
+        <div className="title fixed-top">
+          {' '}
+          <img src={reddit} alt="logo" style={{ height: '40px', margin: '7px' }} />
+          Popular SubReddits{' '}
+        </div>
       </header>
-
+      {loadingState.onLoading && <Loading />}
       <main className="border">
-        <div className="title">Popular SubReddits </div>
-        {loadingState.onLoading ? <Loading /> : ''}
-        {loadingState.onError ? <h1>Oops There was an error! Try again :)</h1> : ''}
         <div className="border">
           <CardList subReddits={subReddits} />
         </div>

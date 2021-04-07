@@ -15,7 +15,7 @@
 .card:hover {
   animation: grow 0.5s linear ease-in;
   transform: scale(1.1);
-  border: blue solid 2px;
+  border: rgb(209, 47, 0) solid 2px;
   border-radius: 5px;
 }
 

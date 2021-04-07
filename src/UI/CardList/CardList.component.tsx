@@ -17,7 +17,7 @@ const CardList = (subReddits: any) => {
           let entries: any = val[1];
           entries.map((entry: any, i: number) => <h4 key={i}>{entry}</h4>);
           let byUps = entries.slice(0);
-          byUps.sort((a: any, b: any) => a.ups - b.ups);
+          byUps.sort((a: any, b: any) => b.ups - a.ups);
           return (
             <div key={k}>
               <h2>{val[0]}</h2>
